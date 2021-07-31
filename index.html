@@ -5,16 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Skuska</title>
+    <link rel="stylesheet" href="style.css">
+    <title>GameBlaer</title>
 </head>
 <body>
 <h1>Vitaj</h1>
-<p>pekny den</p>
+<p>skusam si stranku na githube.</p>
 
 <button onclick="test(this)">Stlac</button>
 
+<footer>
+    <p id="copyright">Created by GameBlaer &copy; 7.2021 - </p>
+</footer>
 </body>
 <script>
+    document.getElementById("copyright").innerHTML += new Date().getFullYear();
+
     function test(id){
         if (id.innerHTML === "Vyplnit") {
             id.innerHTML = "Stlac"
