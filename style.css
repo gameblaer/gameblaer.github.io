@@ -1,4 +1,4 @@
-body {
+html body {
     background-color: rgba(0, 0, 0, 0.8);
     color: rgba(255, 255, 255, 0.75);
     margin: 0 auto;
@@ -9,4 +9,16 @@ body {
 footer p {
     text-align: center;
     font-size: 1rem;
+}
+
+.grid-container-time {
+    display: grid;
+    grid-template-columns: 5rem 5rem 5rem 5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "days hours minuts secunds"
+    "daysD hoursH minutsM secundsS";
+    grid-gap: 0.5rem;
+    background-color: #2196F3;
+    padding: 0.5rem;
 }
