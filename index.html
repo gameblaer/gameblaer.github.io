@@ -14,6 +14,17 @@
 
 <button onclick="test(this)">Stlac</button>
 
+<div class="grid-container-time">
+    <p>Days</p>
+    <p>Hours</p>
+    <p>Minutes</p>
+    <p>Seconds</p>
+    <p class="time" id="days1"></p>
+    <p class="time" id="hours1"></p>
+    <p class="time" id="minutes1"></p>
+    <p class="time" id="seconds1"></p>
+</div>
+
 <footer>
     <p id="copyright">Created by GameBlaer &copy; 7.2021 - </p>
 </footer>
@@ -27,6 +38,37 @@
         } else {
             id.innerHTML = "Vyplnit"
         }
+    }
+
+    const daysCountDown = document.querySelector("#days1")
+    const hoursCountDown = document.querySelector("#hours1")
+    const minutesCountDown = document.querySelector("#minutes1")
+    const secondsCountDown = document.querySelector("#seconds1")
+
+    setInterval(countDownDays, 1000)
+    function countDownDays(){
+        const deadline = new Date('2021-10-1')
+        let endTime = getTimeRemaining(deadline);
+        daysCountDown.innerHTML = endTime.days;
+        hoursCountDown.innerHTML = endTime.hours;
+        minutesCountDown.innerHTML = endTime.minutes;
+        secondsCountDown.innerHTML = endTime.seconds;
+    }
+
+    function getTimeRemaining(endtime){
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor( (total/1000) % 60 );
+        const minutes = Math.floor( (total/1000/60) % 60 );
+        const hours = Math.floor( (total/(1000*60*60)) % 24 );
+        const days = Math.floor( total/(1000*60*60*24) );
+
+        return {
+            total,
+            days,
+            hours,
+            minutes,
+            seconds
+        };
     }
 </script>
 </html>
