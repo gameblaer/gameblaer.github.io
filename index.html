@@ -47,14 +47,14 @@
     function countDownDays(){
         const deadline = new Date('2022-2-1')
         let endTime = getTimeRemaining(deadline);
-        daysCountDown.innerHTML = endTime.days;
-        hoursCountDown.innerHTML = endTime.hours;
-        minutesCountDown.innerHTML = endTime.minutes;
-        secondsCountDown.innerHTML = endTime.seconds;
+        daysCountDown.innerHTML = String(endTime.days);
+        hoursCountDown.innerHTML = String(endTime.hours);
+        minutesCountDown.innerHTML = String(endTime.minutes);
+        secondsCountDown.innerHTML = String(endTime.seconds);
     }
 
     function getTimeRemaining(endtime){
-        const total = Date.parse(endtime) - Date.parse(new Date());
+        const total = Date.parse(endtime) - Date.parse(String(new Date()));
         const seconds = Math.floor( (total/1000) % 60 );
         const minutes = Math.floor( (total/1000/60) % 60 );
         const hours = Math.floor( (total/(1000*60*60)) % 24 );
